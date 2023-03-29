@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <p>Hello World</p>
+  <button id="button1">Show day of the week</button>
+  <button id="button2">Add/remove border</button>
+    <script>
+        function getDayOfTheWeek() {
+        const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const date = new Date();
+        const dayOfWeek = daysOfWeek[date.getDay()];
+        return `Today is ${dayOfWeek}`;
+        }
+
+        function firstButtonClick() {
+        const paragraph = document.querySelector('p');
+        paragraph.textContent = getDayOfTheWeek();
+        }
+
+        function secondButtonClick() {
+        const paragraph = document.querySelector('p');
+        if (paragraph.style.border) {
+            paragraph.style.border = '';
+        } else {
+            paragraph.style.border = '1px solid black';
+        }
+        }
+
+        const firstButton = document.querySelector('#button1');
+        const secondButton = document.querySelector('#button2');
+
+        firstButton.addEventListener('click', firstButtonClick);
+        secondButton.addEventListener('click', secondButtonClick);
+
+    </script>
+</body>
+</html>
